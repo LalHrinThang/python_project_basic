@@ -26,8 +26,7 @@ def power(x,y):
 to_operate = {"+":add,"-":substract,"*":multiply,"/":divide,"%":modulus,"**":power}
 
 
-print("Welcome to Simple Calculator")
-
+print("Welcome to Simple Calculator ! ")
 while True:
     num1 = float(input("Enter the first number : "))
     operator = input("Enter Operator (+,-,*,/,**,%) : ")
