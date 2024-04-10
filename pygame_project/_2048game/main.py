@@ -29,7 +29,9 @@ def draw_grid(window):
         y = row * RECT_HEIGHT
         pygame.draw.line(window,OUTLINE_COLOR,(0,y),(WIDTH,y),OUTLINE_THICKNESS)
 
-
+    for col in range(1,COLS):
+        x = col * RECT_WIDTH
+        pygame.draw.line(window,OUTLINE_COLOR,(x,0),(x,HEIGHT),OUTLINE_THICKNESS)
 
     pygame.draw.rect(window,OUTLINE_COLOR,(0,0,WIDTH,HEIGHT),OUTLINE_THICKNESS)
 
