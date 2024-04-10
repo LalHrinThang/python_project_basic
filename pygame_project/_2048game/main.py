@@ -25,7 +25,7 @@ pygame.display.set_caption("2048")
 
 def draw_grid(window):
 
-    for row in range(1,ROWS):
+    for row in range(1,ROWS): # don't need to draw 4 horizontal line so it's started from 1
         y = row * RECT_HEIGHT
         pygame.draw.line(window,OUTLINE_COLOR,(0,y),(WIDTH,y),OUTLINE_THICKNESS)
 
@@ -33,7 +33,7 @@ def draw_grid(window):
         x = col * RECT_WIDTH
         pygame.draw.line(window,OUTLINE_COLOR,(x,0),(x,HEIGHT),OUTLINE_THICKNESS)
 
-    pygame.draw.rect(window,OUTLINE_COLOR,(0,0,WIDTH,HEIGHT),OUTLINE_THICKNESS)
+    pygame.draw.rect(window,OUTLINE_COLOR,(0,0,WIDTH,HEIGHT),OUTLINE_THICKNESS) # 0,0 => start point coordinate / Width = height = 800 => end point coordinate 
 
 
 def draw(window):
@@ -46,10 +46,13 @@ def draw(window):
 def main(window): 
     clock = pygame.time.Clock()
     run = True
-
+     
+# I want to run everycomputer to run the same speed as 60 FPS
     while run:
         clock.tick(FPS)
 
+
+# exit_button click => exit from the game : 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
