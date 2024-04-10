@@ -12,7 +12,7 @@ WIDTH, HEIGHT = 800,800
 ROWS = 4
 COLS = 4
 
-OUTLINE_COLOR = (187,17,160)
+OUTLINE_COLOR = (187,170,160)
 OUTLINE_THICKNESS = 10
 BACKGROUND_COLOR = (205,192,180)
 FONT_COLOR = (119,110,101)
@@ -20,10 +20,14 @@ FONT_COLOR = (119,110,101)
 WINDOW = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("2048")
 
+def draw_grid(window):
+    pygame.draw.rect(window,OUTLINE_COLOR,(0,0,WIDTH,HEIGHT),OUTLINE_THICKNESS)
+
 
 def draw(window):
     window.fill(BACKGROUND_COLOR)
 
+    draw_grid(window)
 
     pygame.display.update()
 
